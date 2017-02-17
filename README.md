@@ -12,7 +12,7 @@ The following pipeline will ensure the project is checked out into the correct `
 steps:
   - command: go test
     plugins:
-      golang:
+      golang#v0.1:
         import: github.com/my-org/my-project
 ```
 
