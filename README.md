@@ -25,6 +25,7 @@ The import path to use when the project is checked out. For example, if you deve
 ## Roadmap
 
 * Handle `fatal: destination path '.' already exists and is not an empty directory` if the same pipeline is run without the `golang` plugin
+* Prepend to existing `$GOPATH`s instead of replacing
 
 ## License
 
