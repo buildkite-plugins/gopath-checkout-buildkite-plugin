@@ -22,6 +22,10 @@ steps:
 
 The import path to use when the project is checked out. For example, if you develop in `$GOPATH/src/github.com/my-org/my-project` then the `import` option should be `github.com/my-org/my-project`.
 
+## Roadmap
+
+* Handle `fatal: destination path '.' already exists and is not an empty directory` if the same pipeline is run without the `golang` plugin
+
 ## License
 
 MIT (see [LICENSE](LICENSE))
