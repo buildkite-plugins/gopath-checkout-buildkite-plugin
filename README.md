@@ -2,7 +2,7 @@
 
 __This is designed to run with Buildkite Agent v3.x beta. Plugins are not yet supported in Buildkite Agent v2.x.__
 
-A Buildkite plugin to help setup the correct `$GOPATH` for Go projects.
+A [Go](https://golang.org) Buildkite Agent plugin that sets your `$GOPATH` and checks out your project into the correct directory structure.
 
 ## Example
 
