@@ -8,6 +8,5 @@ if [[ ! -z "${BUILDKITE_PLUGIN_GOLANG_IMPORT:-}" ]]; then
 	export BUILDKITE_BUILD_CHECKOUT_PATH="$BUILDKITE_BUILD_CHECKOUT_PATH/src/$BUILDKITE_PLUGIN_GOLANG_IMPORT"
 else
 	echo "+++ :golang: No 'import' option specified"
-	env | grep 'BUILDKITE_'
 	exit 1
 fi
