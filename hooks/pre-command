@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -eu
+
+# Output a comment prefixed with a hash in grey
+function buildkite-comment {
+  echo -ne "\033[90m"
+  echo "#" "$@"
+  echo -ne "\033[0m"
+}
+
+if [[ ! -z "${BUILDKITE_PLUGIN_GOLANG_IMPORT:-}" ]]; then
+        GO_ROOT_NAME=".buildkite-go-$BUILDKITE_JOB_ID"
+        GO_WORKING_PATH="$GO_ROOT_NAME/src/$BUILDKITE_PLUGIN_GOLANG_IMPORT"
+
+	echo "~~~ :golang: Creating temporary \$GOPATH workspace"
+        mkdir -p "$GO_WORKING_PATH"
+        buildkite-comment "Directory created at \"$(pwd)/$GO_WORKING_PATH\""
+
+	echo "~~~ :golang: Copying repository to \$GOPATH/src/$BUILDKITE_PLUGIN_GOLANG_IMPORT"
+        ls -1A | grep -v "^$GO_ROOT_NAME" | grep -v ^\.git | xargs -I{} cp -R {} $GO_WORKING_PATH
+        buildkite-comment "Copied all repository files (excluding .git) to \"$(pwd)/$GO_WORKING_PATH\""
+
+	echo "~~~ :golang: Changing working directory and GOPATH"
+ 	export GOPATH="$BUILDKITE_BUILD_CHECKOUT_PATH/$GO_ROOT_NAME"
+        export BUILDKITE_BUILD_CHECKOUT_PATH"=$GO_WORKING_PATH"
+        buildkite-comment "\$GOPATH is now $GOPATH"
+else
+	echo "+++ :golang: No 'import' option specified"
+	exit 1
+fi
