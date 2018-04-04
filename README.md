@@ -1,8 +1,8 @@
 # Golang Buildkite Plugin
 
-__This is designed to run with Buildkite Agent v3.x beta. Plugins are not yet supported in Buildkite Agent v2.x.__
+A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for running [Go](https://golang.org) code directly on your agent machines. It does this by setting the `$GOPATH`, and checking out your project into the correct directory structure.
 
-A [Go](https://golang.org) Buildkite Agent plugin that sets your `$GOPATH` and checks out your project into the correct directory structure.
+See also the [golang-build plugin](https://github.com/buildkite-plugins/golang-build-buildkite-plugin).
 
 ## Example
 
