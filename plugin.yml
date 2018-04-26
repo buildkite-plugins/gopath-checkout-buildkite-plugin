@@ -1,0 +1,11 @@
+name: Golang
+description: Fixes your checkout and GOPATH for running Go code directly on your agent machines
+author: https://github.com/buildkite
+requirements: []
+configuration:
+  properties:
+    import:
+      type: string
+  required:
+    - import
+  additionalProperties: false
