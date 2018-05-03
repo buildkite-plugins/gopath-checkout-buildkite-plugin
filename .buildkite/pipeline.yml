@@ -1,0 +1,16 @@
+steps:
+  - label: ":bash: Tests"
+    plugins:
+      docker-compose#v2.1.0:
+        run: tests
+
+  - label: ":bash: Shellcheck"
+    plugins:
+      shellcheck#v1.0.1:
+        files:
+          - hooks/*
+
+  - label: ":sparkles: Linter"
+    plugins:
+      plugin-linter#v1.0.0:
+        name: gopath-checkout
