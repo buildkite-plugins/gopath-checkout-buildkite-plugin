@@ -19,3 +19,12 @@ export BUILDKITE_PIPELINE_SLUG="my-pipeline"
   assert_success
   assert_output --partial "BUILDKITE_BUILD_CHECKOUT_PATH=/builds/.golang/my-pipeline/src/my-dir"
 }
+
+@test "adds GOPATH/bin to PATH" {
+  export PATH=/bin
+
+  run $PWD/hooks/pre-checkout
+  
+  assert_success
+  assert_output --partial "PATH=/bin:/builds/.golang/my-pipeline/bin"
+}
