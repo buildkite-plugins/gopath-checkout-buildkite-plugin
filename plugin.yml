@@ -1,0 +1,10 @@
+name: gopath-checkout
+description: Checkout your code into the correct GOPATH, for running Go commands directly on an agent machine
+author: https://github.com/buildkite
+requirements:
+  - go
+configuration:
+  properties:
+    import:
+      type: string
+  additionalProperties: false

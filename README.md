@@ -1,4 +1,4 @@
-# Golang Buildkite Plugin
+# GOPATH Checkout Buildkite Plugin
 
 A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for running [Go](https://golang.org) code directly on your agent machines. It does this by setting the `$GOPATH`, and checking out your project into the correct directory structure.
 
@@ -12,15 +12,21 @@ The following pipeline will ensure the project is checked out into the correct `
 steps:
   - command: go test
     plugins:
-      golang#v0.3:
+      gopath-checkout#v0.3:
         import: github.com/my-org/my-project
 ```
 
-## Options
+## Configuration
 
 ### `import`
 
 The import path to use when the project is checked out. For example, if you develop in `$GOPATH/src/github.com/my-org/my-project` then the `import` option should be `github.com/my-org/my-project`.
+
+## Developing
+
+```bash
+docker-compose run --rm tests
+```
 
 ## Roadmap
 
