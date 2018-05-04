@@ -13,8 +13,12 @@ if [[ -n "${BUILDKITE_PLUGIN_GOLANG_IMPORT:-}" ]]; then
   export BUILDKITE_BUILD_CHECKOUT_PATH="$GOPATH/src/$BUILDKITE_PLUGIN_GOLANG_IMPORT"
   echo "BUILDKITE_BUILD_CHECKOUT_PATH=$BUILDKITE_BUILD_CHECKOUT_PATH"
 
+  # Make sure go get/install binaries are installed in the right place
+  export GOBIN="$GOPATH/bin"
+  echo "GOBIN=$GOBIN"
+
   # Add golang bin commands to path
-  export PATH="$PATH:$GOPATH/bin"
+  export PATH="$PATH:$GOBIN"
   echo PATH="$PATH"
 else
   echo "+++ :golang: No 'import' option specified"
