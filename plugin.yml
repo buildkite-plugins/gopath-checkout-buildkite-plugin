@@ -1,4 +1,4 @@
-name: gopath-checkout
+name: GOPATH Checkout
 description: Checkout your code into the correct GOPATH, for running Go commands directly on an agent machine
 author: https://github.com/buildkite
 requirements:
