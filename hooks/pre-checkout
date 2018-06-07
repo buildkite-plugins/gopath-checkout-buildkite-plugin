@@ -2,7 +2,7 @@
 
 set -eu
 
-if [[ -n "${BUILDKITE_PLUGIN_GOLANG_IMPORT:-}" ]]; then
+if [[ -n "${BUILDKITE_PLUGIN_GOPATH_CHECKOUT_IMPORT:-}" ]]; then
   echo "~~~ :golang: Setting GOPATH and checkout path"
 
   # Create a scoped gopath which won't collide with non-plugin checkouts
@@ -10,7 +10,7 @@ if [[ -n "${BUILDKITE_PLUGIN_GOLANG_IMPORT:-}" ]]; then
   echo "GOPATH=$GOPATH"
 
   # Now checkout into the correct import location within that gopath
-  export BUILDKITE_BUILD_CHECKOUT_PATH="$GOPATH/src/$BUILDKITE_PLUGIN_GOLANG_IMPORT"
+  export BUILDKITE_BUILD_CHECKOUT_PATH="$GOPATH/src/$BUILDKITE_PLUGIN_GOPATH_CHECKOUT_IMPORT"
   echo "BUILDKITE_BUILD_CHECKOUT_PATH=$BUILDKITE_BUILD_CHECKOUT_PATH"
 
   # Make sure go get/install binaries are installed in the right place
