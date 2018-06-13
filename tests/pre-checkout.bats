@@ -2,7 +2,7 @@
 
 load "$BATS_PATH/load.bash"
 
-export BUILDKITE_PLUGIN_GOLANG_IMPORT=my-dir
+export BUILDKITE_PLUGIN_GOPATH_CHECKOUT_IMPORT=my-dir
 export BUILDKITE_BUILD_CHECKOUT_PATH="/builds/my-pipeline"
 export BUILDKITE_PIPELINE_SLUG="my-pipeline"
 
