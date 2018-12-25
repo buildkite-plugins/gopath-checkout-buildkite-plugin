@@ -12,8 +12,8 @@ The following pipeline will ensure the project is checked out into the correct `
 steps:
   - command: go test
     plugins:
-      gopath-checkout#v1.0.1:
-        import: github.com/my-org/my-project
+      - gopath-checkout#v1.0.1:
+          import: github.com/my-org/my-project
 ```
 
 ## Configuration
