@@ -1,4 +1,4 @@
-# GOPATH Checkout Buildkite Plugin
+# GOPATH Checkout Buildkite Plugin [![Build status](https://badge.buildkite.com/dfa888829723dcf23369cc29c9f375f1206bedca625c7f0c1e.svg?branch=master)](https://buildkite.com/buildkite/plugins-gopath-checkout)
 
 A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for running [Go](https://golang.org) code directly on your agent machines. It does this by setting the `$GOPATH`, and checking out your project into the correct directory structure.
 
