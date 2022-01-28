@@ -12,7 +12,7 @@ The following pipeline will ensure the project is checked out into the correct `
 steps:
   - command: go test
     plugins:
-      - gopath-checkout#v1.0.1:
+      - gopath-checkout#v2.0.0:
           import: github.com/my-org/my-project
 ```
 
