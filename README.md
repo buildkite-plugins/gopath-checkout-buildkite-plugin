@@ -24,8 +24,16 @@ The import path to use when the project is checked out. For example, if you deve
 
 ## Developing
 
+To run testing, shellchecks and plugin linting use use `bk run` with the [Buildkite CLI](https://github.com/buildkite/cli).
+
 ```bash
-docker-compose run --rm tests
+bk run
+```
+
+Or if you want to run just the tests, you can use the docker [Plugin Tester](https://github.com/buildkite-plugins/buildkite-plugin-tester):
+
+```bash
+docker run --rm -ti -v "${PWD}":/plugin buildkite/plugin-tester:latest
 ```
 
 ## Roadmap

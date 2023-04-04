@@ -1,16 +1,15 @@
 steps:
   - label: ":bash: Tests"
     plugins:
-      docker-compose#v4.9.0:
-        run: tests
+      - plugin-tester#v1.0.0: ~
 
   - label: ":bash: Shellcheck"
     plugins:
-      shellcheck#v1.3.0:
-        files:
-          - hooks/*
+      - shellcheck#v1.3.0:
+          files:
+            - hooks/*
 
   - label: ":sparkles: Linter"
     plugins:
-      plugin-linter#v3.0.0:
-        id: gopath-checkout
+      - plugin-linter#v3.1.0:
+          id: gopath-checkout
