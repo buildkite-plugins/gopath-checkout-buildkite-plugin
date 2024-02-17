@@ -1,7 +1,7 @@
 steps:
   - label: ":bash: Tests"
     plugins:
-      - plugin-tester#v1.1.0: ~
+      - plugin-tester#v1.1.1: ~
 
   - label: ":bash: Shellcheck"
     plugins:
