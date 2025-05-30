@@ -24,9 +24,9 @@ The import path to use when the project is checked out. For example, if you deve
 
 ## Compatibility
 
-| Plugin | Elastic Stack | Agent Stack K8s | Hosted (Mac) | Hosted (Linux) | Notes |
-| ------ | :-----------: | :-------------: | :----: | :----: |:---- |
-| Gopath Checkout | ✅ | ❌ | ✅ | ✅ | **K8s** Uses `pre-checkout` hook, which runs in separate `checkout` container from commands |
+| Elastic Stack | Agent Stack K8s | Hosted (Mac) | Hosted (Linux) | Notes |
+| :-----------: | :-------------: | :----: | :----: |:---- |
+| ✅ | ❌ | ✅ | ✅ | **K8s** Uses `pre-checkout` hook, which runs in separate `checkout` container from commands |
 
 - ✅ Fully supported (all combinations of attributes have been tested to pass)
 - ⚠️ Partially supported (some combinations cause errors/issues)
